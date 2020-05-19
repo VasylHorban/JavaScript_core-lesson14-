@@ -1,3 +1,4 @@
+let listItems = document.querySelectorAll('li');
 const someText = [
     ['I ', 'You ', 'We '],
     ['make ', 'stole ', 'bought ', 'get '],
@@ -20,10 +21,15 @@ function getRandomInt(min, max) {
 }
 
 //click event
-document.querySelector('#fill').addEventListener('click',()=>{
-    let listItems = document.querySelectorAll('li');
+document.querySelector('#fill').addEventListener('click',()=>{  
     for (let i = 0; i < listItems.length; i++) {
         listItems[i].textContent = getRandomText();
     }
 
 })
+
+//showing the number of lists
+showAmount();
+function showAmount() {
+    document.querySelector('#amount').textContent = `There are ${listItems.length} lists on this page.`;
+}
